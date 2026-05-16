@@ -91,7 +91,7 @@ membersTrack.innerHTML = members
   .map(
     member => `
     <article class="member">
-      <img src="${member.avatar || defaultAvatar}" alt="${member.name}" />
+      <div class="member__avatar"><img src="${member.avatar || defaultAvatar}" alt="${member.name}" /></div>
       <h3>${member.name}</h3>
       <p>${member.role}</p>
       <a href="${member.link || `https://ya.ru/search/?text=${member.name.replace(' ', '+')}`}" target="_blank">Подробнее</a>
@@ -121,7 +121,9 @@ function updateMembers() {
   if (membersIndex > maxIndex) membersIndex = 0;
   const step = 100 / visible;
   membersTrack.style.transform = `translateX(-${membersIndex * step}%)`;
-  membersCurrent.textContent = String(Math.min(membersIndex + visible, memberCards.length));
+  membersCurrent.textContent = String(
+    Math.min(membersIndex + visible, memberCards.length)
+  );
   membersTotal.textContent = String(memberCards.length);
 }
 
@@ -163,7 +165,9 @@ let stagesIndex = 0;
 let stagesDotsCount = 0;
 
 function getStagesSlidesCount() {
-  return window.matchMedia('(max-width: 1300px)').matches ? 5 : stagesItems.length;
+  return window.matchMedia('(max-width: 1300px)').matches
+    ? 5
+    : stagesItems.length;
 }
 
 function renderStagesDots(slidesCount) {

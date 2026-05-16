@@ -570,15 +570,23 @@ a {
   text-align: center;
 }
 
-.member img {
-  width: min(100%, 320px);
+.member__avatar {
+  width: 320px;
+  height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto 28px;
   border-radius: 50%;
   background-color: #424241;
   background-image: url(assets/images/paper2.png);
-  object-position: center 21px;
+  overflow: hidden;
 }
-
+.member__avatar img {
+  width: 293px;
+  height: 100%;
+  object-position: center 12px;
+}
 .member h3 {
   margin: 0 0 6px;
   font-size: 24px;
@@ -934,8 +942,14 @@ a {
     flex-basis: 100%;
     padding: 0;
   }
-  .member img {
+  .member__avatar {
     width: 244px;
+    height: 244px;
+  }
+  .member__avatar img {
+    width: 223px;
+    height: 100%;
+    object-position: center 8px;
   }
   .footer {
     padding-bottom: 60px;
