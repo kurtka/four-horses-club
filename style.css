@@ -357,8 +357,8 @@ a {
   border-bottom: 2px solid var(--line);
 }
 
-.info-table div:first-child {
-  border-top: 2px solid var(--line);
+.info-table div:last-child {
+  border-bottom: none;
 }
 .info-table dt,
 .info-table dd {
